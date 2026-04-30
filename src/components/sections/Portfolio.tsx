@@ -39,23 +39,26 @@ export default function Portfolio() {
           {projects.map((project, idx) => (
             <motion.div
               key={`portfolio-project-${project.title.replace(" ", "-")}-${idx}`}
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: idx * 0.1 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1, duration: 0.6 }}
               className="group relative overflow-hidden rounded-[2.5rem] cursor-pointer shadow-sm hover:shadow-2xl transition-all duration-700 bg-slate-100"
               onClick={() => setSelectedProject(project)}
             >
               <div className="aspect-[4/5] overflow-hidden">
-                <img
+                <motion.img
+                  whileHover={{ scale: 1.1, rotate: 1 }}
+                  transition={{ duration: 0.8 }}
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1"
+                  className="w-full h-full object-cover"
                 />
               </div>
               
-              {/* Overlay */}
-              <div className="absolute inset-x-0 bottom-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                <div className="glass p-6 rounded-3xl border border-white/20 shadow-2xl flex justify-between items-end">
+              {/* Floating Information Card */}
+              <div className="absolute inset-x-6 bottom-6 translate-y-4 group-hover:translate-y-0 transition-all duration-500 opacity-0 group-hover:opacity-100">
+                <div className="glass p-6 rounded-3xl border border-white/40 shadow-2xl flex justify-between items-end backdrop-blur-xl bg-white/10">
                   <div>
                     <span className="text-primary text-[10px] font-black tracking-widest uppercase mb-1 block">
                       {project.category}
@@ -74,7 +77,7 @@ export default function Portfolio() {
                 </div>
               </div>
 
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-primary/20 pointer-events-none"></div>
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent pointer-events-none"></div>
             </motion.div>
           ))}
         </div>

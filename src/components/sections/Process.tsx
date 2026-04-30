@@ -52,21 +52,40 @@ export default function Process() {
           {steps.map((step, idx) => (
             <motion.div
               key={`process-step-${step.title.replace(" ", "-")}-${idx}`}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: idx * 0.1, duration: 0.5 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1, duration: 0.6 }}
               className="relative group text-center"
             >
-              <div className="w-20 h-20 mx-auto rounded-3xl bg-white border border-slate-100 flex items-center justify-center mb-8 relative z-10 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:bg-primary/5 group-hover:border-primary/20 shadow-sm hover:shadow-xl">
-                <step.icon size={32} className="text-slate-800 transition-transform group-hover:scale-110 group-hover:text-primary" />
-                
-                {/* Step number badge */}
-                <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-slate-900 text-white border-4 border-white flex items-center justify-center text-[10px] font-black font-display z-20 shadow-lg">
-                  {idx + 1}
+              <div className="relative mb-8">
+                {/* Step Image Visual */}
+                <div className="w-full aspect-square rounded-[2rem] overflow-hidden mb-8 shadow-sm group-hover:shadow-2xl transition-all duration-500 border border-slate-100 relative">
+                  <img 
+                    src={[
+                      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80",
+                      "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80",
+                      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80",
+                      "https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&q=80"
+                    ][idx]} 
+                    alt={step.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+
+                {/* Step Icon Badge */}
+                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 h-16 rounded-2xl bg-white border border-slate-100 flex items-center justify-center z-10 transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-2 group-hover:rotate-3 shadow-xl">
+                  <step.icon size={28} className="text-slate-800 transition-transform group-hover:scale-110 group-hover:text-primary" />
+                  
+                  {/* Step number badge */}
+                  <div className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-slate-900 text-white border-2 border-white flex items-center justify-center text-[10px] font-black font-display z-20 shadow-lg">
+                    {idx + 1}
+                  </div>
                 </div>
               </div>
 
-              <h3 className="text-xl font-display font-bold mb-4 text-slate-900">{step.title}</h3>
+              <h3 className="text-xl font-display font-bold mb-4 text-slate-900 mt-6">{step.title}</h3>
               <p className="text-slate-500 text-sm leading-relaxed max-w-[200px] mx-auto group-hover:text-slate-700 transition-colors font-medium">
                 {step.description}
               </p>

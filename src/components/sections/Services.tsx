@@ -35,32 +35,53 @@ export default function Services() {
           {services.map((service, idx) => (
             <motion.div
               key={`service-card-${service.title.replace(" ", "-")}-${idx}`}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="glass-card p-8 group relative overflow-hidden bg-white border border-slate-200/60"
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1, duration: 0.6 }}
+              whileHover={{ 
+                y: -15,
+                transition: { duration: 0.3 }
+              }}
+              className="glass-card group relative overflow-hidden bg-white border border-slate-200/60 flex flex-col"
             >
-              <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity blur-2xl rounded-full -mr-10 -mt-10`}></div>
-              
-              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} p-[1px] mb-6 group-hover:scale-110 transition-transform duration-500 shadow-sm`}>
-                <div className="w-full h-full bg-white rounded-[15px] flex items-center justify-center">
-                  <service.icon size={28} className="text-slate-800" />
-                </div>
+              {/* Image Preview for Service */}
+              <div className="h-48 overflow-hidden relative">
+                 <img 
+                   src={`https://images.unsplash.com/photo-${[
+                     "1498050108023-c5249f4df085",
+                     "1558655146-d09347e92766",
+                     "1517248135467-4c7edcad34c4",
+                     "1585747860715-2ba37e788b70",
+                     "1460925895917-afdab827c52f",
+                     "1499951360447-b19be8fe80f5"
+                   ][idx]}?auto=format&fit=crop&q=80&w=600`} 
+                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                   alt={service.title}
+                 />
+                 <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent"></div>
               </div>
 
-              <h3 className="text-2xl font-display font-bold mb-4 group-hover:text-primary transition-colors text-slate-900">
-                {service.title}
-              </h3>
-              
-              <p className="text-slate-500 leading-relaxed font-medium group-hover:text-slate-600 transition-colors">
-                {service.description}
-              </p>
+              <div className="p-8 relative mt-[-2rem]">
+                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} p-[1px] mb-6 group-hover:scale-110 transition-transform duration-500 shadow-xl`}>
+                  <div className="w-full h-full bg-white rounded-[15px] flex items-center justify-center">
+                    <service.icon size={28} className="text-slate-800" />
+                  </div>
+                </div>
 
-              <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between">
-                <span className="text-xs font-black tracking-widest text-slate-300 uppercase group-hover:text-primary transition-colors">Learn More</span>
-                <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-primary transition-colors">
-                  <Rocket size={14} className="group-hover:text-white transition-transform group-hover:scale-125" />
+                <h3 className="text-2xl font-display font-bold mb-4 group-hover:text-primary transition-colors text-slate-900">
+                  {service.title}
+                </h3>
+                
+                <p className="text-slate-500 leading-relaxed font-medium group-hover:text-slate-600 transition-colors mb-8">
+                  {service.description}
+                </p>
+
+                <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
+                  <span className="text-xs font-black tracking-widest text-slate-300 uppercase group-hover:text-primary transition-colors">Digital Excellence</span>
+                  <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-primary transition-colors">
+                    <Rocket size={14} className="group-hover:text-white transition-transform group-hover:scale-125" />
+                  </div>
                 </div>
               </div>
             </motion.div>

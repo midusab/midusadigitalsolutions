@@ -37,33 +37,45 @@ export default function Pricing() {
               key={`pricing-plan-${plan.name}-${idx}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1 }}
-              className={`glass-card p-8 relative flex flex-col h-full bg-white border border-slate-200/60 ${
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1, duration: 0.6 }}
+              whileHover={{ y: -10 }}
+              className={`glass-card p-8 md:p-10 relative flex flex-col h-full overflow-hidden ${
                 plan.highlight 
-                  ? "border-primary/50 ring-2 ring-primary/5 lg:scale-105 z-10 shadow-2xl shadow-primary/10" 
-                  : "shadow-sm"
+                  ? "bg-slate-900 text-white lg:scale-110 z-10 shadow-2xl shadow-primary/20 border-primary shadow-[0_20px_50px_rgba(0,102,255,0.15)]" 
+                  : "bg-white border border-slate-200/60 shadow-sm"
               }`}
             >
               {plan.highlight && (
-                <div key="most-popular-badge" className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-1.5 bg-primary text-white rounded-full text-[10px] font-black uppercase tracking-[0.2em]">
-                  Most Popular
-                </div>
+                <>
+                  <div key="most-popular-badge" className="absolute top-0 right-0 px-6 py-2 bg-primary text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-bl-3xl">
+                    Most Popular
+                  </div>
+                  <motion.div 
+                    animate={{ 
+                      scale: [1, 1.2, 1],
+                      rotate: [0, 90, 0]
+                    }}
+                    transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                    className="absolute -top-32 -right-32 w-80 h-80 bg-primary/20 blur-[120px] rounded-full pointer-events-none" 
+                  />
+                </>
               )}
 
-              <div className="mb-8">
-                <h3 className="text-2xl font-display font-bold mb-2 text-slate-900">{plan.name}</h3>
-                <p className="text-slate-500 text-sm mb-6 font-medium">{plan.description}</p>
+              <div className="mb-8 relative z-10">
+                <h3 className={`text-2xl font-display font-bold mb-2 ${plan.highlight ? "text-white" : "text-slate-900"}`}>{plan.name}</h3>
+                <p className={`${plan.highlight ? "text-slate-400" : "text-slate-500"} text-sm mb-6 font-medium`}>{plan.description}</p>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-sm font-bold text-slate-400">KES</span>
-                  <span className="text-4xl font-display font-black text-slate-900">{plan.price}</span>
+                  <span className={`text-sm font-bold ${plan.highlight ? "text-primary" : "text-slate-400"}`}>KES</span>
+                  <span className={`text-4xl font-display font-black ${plan.highlight ? "text-white" : "text-slate-900"}`}>{plan.price}</span>
                 </div>
               </div>
 
-              <div className="space-y-4 mb-10 flex-grow">
+              <div className="space-y-4 mb-10 flex-grow relative z-10">
                 {plan.features.map((feature, fIdx) => (
-                  <div key={`feature-${plan.name}-${fIdx}`} className="flex items-start gap-3 text-sm text-slate-600 font-medium">
-                    <div className="mt-1 w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Check size={12} className="text-primary" />
+                  <div key={`feature-${plan.name}-${fIdx}`} className={`flex items-start gap-3 text-sm font-medium ${plan.highlight ? "text-slate-300" : "text-slate-600"}`}>
+                    <div className={`mt-1 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ${plan.highlight ? "bg-primary text-white" : "bg-primary/10 text-primary"}`}>
+                      <Check size={12} />
                     </div>
                     {feature}
                   </div>
@@ -71,13 +83,13 @@ export default function Pricing() {
               </div>
 
               <button
-                className={`w-full py-4 rounded-2xl font-display font-bold flex items-center justify-center gap-2 transition-all ${
+                className={`w-full py-5 rounded-2xl font-display font-bold flex items-center justify-center gap-2 transition-all relative z-10 group ${
                   plan.highlight
-                    ? "bg-primary text-white hover:scale-105 shadow-xl shadow-primary/20"
+                    ? "bg-primary text-white hover:bg-blue-600 shadow-xl shadow-primary/30"
                     : "bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200"
                 }`}
               >
-                {plan.cta} <ArrowRight size={18} />
+                {plan.cta} <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </button>
             </motion.div>
           ))}
