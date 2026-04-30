@@ -5,6 +5,7 @@ import Pricing from "../components/sections/Pricing";
 import Process from "../components/sections/Process";
 import Testimonials from "../components/sections/Testimonials";
 import CTA from "../components/sections/CTA";
+import SEO from "../components/sections/SEO";
 
 export default function Home() {
   return (
@@ -14,6 +15,10 @@ export default function Home() {
       <div key="sep-1" className="w-full h-px bg-slate-100" />
       
       <Services key="services-section" />
+      
+      <div key="sep-seo-1" className="w-full h-px bg-slate-100" />
+
+      <SEO key="seo-section" />
       
       <div key="sep-2" className="w-full h-px bg-slate-100" />
       

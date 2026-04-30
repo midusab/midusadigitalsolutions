@@ -19,7 +19,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Services", href: "/#services", isHash: true },
-    { name: "Portfolio", href: "/#portfolio", isHash: true },
+    { name: "Portfolio", href: "/portfolio", isHash: false },
     { name: "About", href: "/about", isHash: false },
     { name: "Contact", href: "/contact", isHash: false },
   ];

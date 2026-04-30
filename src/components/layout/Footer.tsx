@@ -34,7 +34,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { name: "Services", href: "/#services" },
-                { name: "Portfolio", href: "/#portfolio" },
+                { name: "Portfolio", href: "/portfolio" },
                 { name: "About", href: "/about" },
                 { name: "Contact Us", href: "/contact" }
               ].map((link, idx) => (

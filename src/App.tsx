@@ -11,6 +11,8 @@ import WhatsAppButton from "./components/common/WhatsAppButton.tsx";
 import Home from "./pages/Home.tsx";
 import About from "./pages/About.tsx";
 import Contact from "./pages/Contact.tsx";
+import ProjectDetail from "./pages/ProjectDetail.tsx";
+import PortfolioPage from "./pages/PortfolioPage.tsx";
 import { useEffect } from "react";
 
 function ScrollToTop() {
@@ -32,6 +34,8 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
+            <Route path="/portfolio/:id" element={<ProjectDetail />} />
           </Routes>
         </AnimatePresence>
         <Footer />
