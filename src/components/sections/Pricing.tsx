@@ -1,0 +1,97 @@
+import { motion } from "motion/react";
+import { Check, ArrowRight } from "lucide-react";
+import { plans } from "../../data/pricing";
+
+export default function Pricing() {
+  return (
+    <section id="pricing" className="py-24 bg-slate-50/50">
+      <div className="section-container">
+        <div className="text-center max-w-2xl mx-auto mb-20">
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-primary font-black tracking-[0.2em] text-xs uppercase mb-4"
+          >
+            Pricing Plans
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-5xl font-display font-bold mb-6 text-slate-900"
+          >
+            Transparent Pricing for <span className="text-gradient">Every Budget</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-slate-600 font-medium"
+          >
+            All prices are in Kenyan Shillings (KES). No hidden fees, just pure value for your business.
+          </motion.p>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-8 items-start">
+          {plans.map((plan, idx) => (
+            <motion.div
+              key={`pricing-plan-${plan.name}-${idx}`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.1 }}
+              className={`glass-card p-8 relative flex flex-col h-full bg-white border border-slate-200/60 ${
+                plan.highlight 
+                  ? "border-primary/50 ring-2 ring-primary/5 lg:scale-105 z-10 shadow-2xl shadow-primary/10" 
+                  : "shadow-sm"
+              }`}
+            >
+              {plan.highlight && (
+                <div key="most-popular-badge" className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-1.5 bg-primary text-white rounded-full text-[10px] font-black uppercase tracking-[0.2em]">
+                  Most Popular
+                </div>
+              )}
+
+              <div className="mb-8">
+                <h3 className="text-2xl font-display font-bold mb-2 text-slate-900">{plan.name}</h3>
+                <p className="text-slate-500 text-sm mb-6 font-medium">{plan.description}</p>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-sm font-bold text-slate-400">KES</span>
+                  <span className="text-4xl font-display font-black text-slate-900">{plan.price}</span>
+                </div>
+              </div>
+
+              <div className="space-y-4 mb-10 flex-grow">
+                {plan.features.map((feature, fIdx) => (
+                  <div key={`feature-${plan.name}-${fIdx}`} className="flex items-start gap-3 text-sm text-slate-600 font-medium">
+                    <div className="mt-1 w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Check size={12} className="text-primary" />
+                    </div>
+                    {feature}
+                  </div>
+                ))}
+              </div>
+
+              <button
+                className={`w-full py-4 rounded-2xl font-display font-bold flex items-center justify-center gap-2 transition-all ${
+                  plan.highlight
+                    ? "bg-primary text-white hover:scale-105 shadow-xl shadow-primary/20"
+                    : "bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200"
+                }`}
+              >
+                {plan.cta} <ArrowRight size={18} />
+              </button>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="mt-16 text-center text-slate-400 text-sm bg-white border border-slate-100 p-6 rounded-3xl max-w-xl mx-auto shadow-sm"
+        >
+          Need something custom? <span className="text-primary font-bold cursor-pointer hover:underline">Contact us for a tailored quote.</span>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
