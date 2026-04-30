@@ -50,7 +50,7 @@ export default function Contact() {
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="bg-slate-50 p-8 rounded-[2.5rem] border border-slate-100"
+          className="bg-slate-50 p-6 md:p-10 rounded-[2.5rem] border border-slate-100"
         >
           <form className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">

@@ -31,7 +31,7 @@ export default function Pricing() {
           </motion.p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 items-start">
+        <div className="grid lg:grid-cols-3 gap-8 gap-y-12 items-start">
           {plans.map((plan, idx) => (
             <motion.div
               key={`pricing-plan-${plan.name}-${idx}`}
@@ -42,7 +42,7 @@ export default function Pricing() {
               whileHover={{ y: -10 }}
               className={`glass-card p-8 md:p-10 relative flex flex-col h-full overflow-hidden ${
                 plan.highlight 
-                  ? "bg-slate-900 text-white lg:scale-110 z-10 shadow-2xl shadow-primary/20 border-primary shadow-[0_20px_50px_rgba(0,102,255,0.15)]" 
+                  ? "bg-slate-900 text-white lg:scale-110 z-10 shadow-2xl shadow-primary/20 border-primary" 
                   : "bg-white border border-slate-200/60 shadow-sm"
               }`}
             >

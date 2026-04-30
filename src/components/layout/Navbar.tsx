@@ -1,10 +1,13 @@
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, ArrowRight } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, MouseEvent } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,11 +18,33 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Services", href: "#services" },
-    { name: "Portfolio", href: "#portfolio" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "Process", href: "#process" },
+    { name: "Services", href: "/#services", isHash: true },
+    { name: "Portfolio", href: "/#portfolio", isHash: true },
+    { name: "About", href: "/about", isHash: false },
+    { name: "Contact", href: "/contact", isHash: false },
   ];
+
+  const handleLinkClick = (e: MouseEvent<HTMLAnchorElement>, link: typeof navLinks[0]) => {
+    if (link.isHash && location.pathname !== "/") {
+      // If we are not on home page and click a hash link, go to home first
+      return;
+    }
+    
+    if (link.isHash) {
+      e.preventDefault();
+      const id = link.href.split("#")[1];
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      } else {
+        navigate("/");
+        setTimeout(() => {
+          document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+    setMobileMenuOpen(false);
+  };
 
   return (
     <nav
@@ -28,9 +53,8 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
+        <Link
+          to="/"
           className="flex items-center gap-2 cursor-pointer"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
@@ -40,38 +64,45 @@ export default function Navbar() {
           <span className="font-display font-bold text-xl tracking-tight text-slate-900">
             Midusa<span className="text-primary">Digital</span>
           </span>
-        </motion.div>
+        </Link>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link, idx) => (
-            <motion.a
+            <motion.div
               key={`desktop-nav-${link.name}-${idx}`}
-              href={link.href}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
-              className="text-sm font-bold text-slate-600 hover:text-primary transition-colors uppercase tracking-widest"
             >
-              {link.name}
-            </motion.a>
+              <Link
+                to={link.href}
+                onClick={(e) => handleLinkClick(e, link)}
+                className="text-sm font-bold text-slate-600 hover:text-primary transition-colors uppercase tracking-widest"
+              >
+                {link.name}
+              </Link>
+            </motion.div>
           ))}
-          <motion.button
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4 }}
-            className="px-6 py-2.5 bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 rounded-full text-sm font-semibold transition-all"
-            onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
           >
-            Get a Quote
-          </motion.button>
+            <Link
+              to="/contact"
+              className="px-6 py-2.5 bg-primary text-white rounded-full text-sm font-bold transition-all shadow-lg shadow-primary/20 hover:bg-blue-600"
+            >
+              Get a Quote
+            </Link>
+          </motion.div>
         </div>
 
         {/* Mobile menu button */}
         <div className="md:hidden">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-white/70 hover:text-white transition-colors"
+            className={`p-2 transition-colors ${isScrolled || mobileMenuOpen ? "text-slate-900" : "text-primary"}`}
           >
             {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -86,28 +117,26 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-navy/95 backdrop-blur-xl border-b border-white/10 overflow-hidden"
+            className="md:hidden bg-white/95 backdrop-blur-xl border-b border-slate-100 overflow-hidden"
           >
-            <div className="px-6 py-8 flex flex-col gap-6">
+            <div className="px-6 py-10 flex flex-col gap-6">
               {navLinks.map((link, idx) => (
-                <a
+                <Link
                   key={`mobile-nav-${link.name}-${idx}`}
-                  href={link.href}
-                  className="text-xl font-medium text-white/70 hover:text-primary transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
+                  to={link.href}
+                  className="text-lg font-bold text-slate-600 hover:text-primary transition-colors tracking-widest uppercase"
+                  onClick={(e) => handleLinkClick(e, link)}
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
-            <button
-              className="w-full py-4 bg-primary text-white rounded-xl font-display font-semibold flex items-center justify-center gap-2"
-              onClick={() => {
-                setMobileMenuOpen(false);
-                document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" });
-              }}
+            <Link
+              to="/contact"
+              className="w-full py-4 bg-primary text-white rounded-2xl font-display font-semibold flex items-center justify-center gap-2 shadow-lg shadow-primary/20"
+              onClick={() => setMobileMenuOpen(false)}
             >
               Start Your Project <ArrowRight size={20} />
-            </button>
+            </Link>
           </div>
         </motion.div>
       )}

@@ -23,15 +23,16 @@ export default function Testimonials() {
           </motion.h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-12">
           {testimonials.map((testimonial, idx) => (
             <motion.div
               key={`testimonial-card-${testimonial.name.replace(" ", "-")}-${idx}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
               whileHover={{ y: -5 }}
-              className="glass-card p-10 relative bg-white border border-slate-100 shadow-sm"
+              className="glass-card p-8 md:p-10 relative bg-white border border-slate-100 shadow-sm"
             >
               <Quote className="absolute top-8 right-8 text-primary/5" size={64} strokeWidth={1} />
               

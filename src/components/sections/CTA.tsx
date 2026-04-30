@@ -6,7 +6,8 @@ export default function CTA() {
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      className="glass-card mb-24 p-12 text-center relative overflow-hidden bg-slate-50 border border-slate-100 section-container"
+      viewport={{ once: true }}
+      className="glass-card mb-24 p-8 md:p-16 text-center relative overflow-hidden bg-slate-50 border border-slate-100 section-container"
     >
       <div className="absolute top-0 left-0 w-32 h-32 bg-primary/10 blur-3xl -ml-16 -mt-16"></div>
       <div className="absolute bottom-0 right-0 w-32 h-32 bg-accent/10 blur-3xl -mr-16 -mb-16"></div>

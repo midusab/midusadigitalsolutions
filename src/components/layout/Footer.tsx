@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 import { Send, Instagram, Twitter, Linkedin, Facebook, MapPin, Mail, Phone } from "lucide-react";
 
 export default function Footer() {
@@ -7,16 +7,16 @@ export default function Footer() {
   return (
     <footer className="pt-24 pb-12 bg-white border-t border-slate-100">
       <div className="section-container">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-20 whitespace-normal">
           <div className="space-y-6">
-            <div className="flex items-center gap-2 cursor-pointer">
+            <Link to="/" className="flex items-center gap-2 cursor-pointer">
               <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center font-display font-bold text-xl text-white shadow-[0_5px_15px_rgba(0,102,255,0.2)]">
                 M
               </div>
               <span className="font-display font-bold text-xl tracking-tight text-slate-900">
                 Midusa<span className="text-primary">Digital</span>
               </span>
-            </div>
+            </Link>
             <p className="text-slate-500 text-sm leading-relaxed font-medium">
               We specialize in creating premium digital experiences that help businesses attract more clients and grow their online authority.
             </p>
@@ -32,12 +32,17 @@ export default function Footer() {
           <div className="space-y-6">
             <h4 className="text-lg font-display font-bold text-slate-900 leading-none">Quick Links</h4>
             <ul className="space-y-3">
-              {["Services", "Portfolio", "Pricing", "Testimonials", "Contact Us"].map((link, idx) => (
+              {[
+                { name: "Services", href: "/#services" },
+                { name: "Portfolio", href: "/#portfolio" },
+                { name: "About", href: "/about" },
+                { name: "Contact Us", href: "/contact" }
+              ].map((link, idx) => (
                 <li key={`footer-link-${idx}`}>
-                  <a href={`#${link.toLowerCase().replace(" ", "")}`} className="text-slate-500 hover:text-primary text-sm transition-colors flex items-center gap-2 font-medium group">
+                  <Link to={link.href} className="text-slate-500 hover:text-primary text-sm transition-colors flex items-center gap-2 font-medium group">
                     <span className="w-1 h-1 rounded-full bg-primary/40 block group-hover:bg-primary transition-colors"></span>
-                    {link}
-                  </a>
+                    {link.name}
+                  </Link>
                 </li>
               ))}
             </ul>
