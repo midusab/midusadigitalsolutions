@@ -18,10 +18,10 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Services", href: "/#services", isHash: true },
-    { name: "Portfolio", href: "/portfolio", isHash: false },
-    { name: "About", href: "/about", isHash: false },
-    { name: "Contact", href: "/contact", isHash: false },
+    { name: "services", href: "/#services", isHash: true },
+    { name: "portfolio", href: "/portfolio", isHash: false },
+    { name: "about", href: "/about", isHash: false },
+    { name: "contact", href: "/contact", isHash: false },
   ];
 
   const handleLinkClick = (e: MouseEvent<HTMLAnchorElement>, link: typeof navLinks[0]) => {
@@ -78,7 +78,7 @@ export default function Navbar() {
               <Link
                 to={link.href}
                 onClick={(e) => handleLinkClick(e, link)}
-                className="text-sm font-bold text-slate-600 hover:text-primary transition-colors uppercase tracking-widest"
+                className="text-sm font-bold text-slate-600 hover:text-primary transition-colors"
               >
                 {link.name}
               </Link>
@@ -124,7 +124,7 @@ export default function Navbar() {
                 <Link
                   key={`mobile-nav-${link.name}-${idx}`}
                   to={link.href}
-                  className="text-lg font-bold text-slate-600 hover:text-primary transition-colors tracking-widest uppercase"
+                  className="text-lg font-bold text-slate-600 hover:text-primary transition-colors"
                   onClick={(e) => handleLinkClick(e, link)}
                 >
                   {link.name}

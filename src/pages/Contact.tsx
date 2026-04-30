@@ -23,7 +23,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-xs font-black text-slate-400 uppercase tracking-widest">Email Us</p>
-                <p className="font-display font-bold text-slate-900">hello@midusa.digital</p>
+                <p className="font-display font-bold text-slate-900">bochieng228@gmail.com</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -32,7 +32,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-xs font-black text-slate-400 uppercase tracking-widest">Call Us</p>
-                <p className="font-display font-bold text-slate-900">+254 700 000 000</p>
+                <p className="font-display font-bold text-slate-900">+254 112 478 220</p>
               </div>
             </div>
             <div className="flex items-center gap-4">

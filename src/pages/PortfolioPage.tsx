@@ -19,9 +19,9 @@ export default function PortfolioPage() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-primary font-black tracking-[0.2em] text-xs uppercase mb-4"
+            className="text-primary font-black tracking-[0.2em] text-xs mb-4"
           >
-            Case Studies
+            case studies
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -41,13 +41,13 @@ export default function PortfolioPage() {
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase transition-all border ${
+              className={`px-6 py-2.5 rounded-full text-xs font-bold tracking-widest transition-all border ${
                 filter === cat
                   ? "bg-primary text-white border-primary shadow-lg shadow-primary/20"
                   : "bg-white text-slate-500 border-slate-100 hover:border-primary/20 hover:text-primary"
               }`}
             >
-              {cat}
+              {cat.toLowerCase()}
             </button>
           ))}
         </div>
@@ -76,8 +76,8 @@ export default function PortfolioPage() {
                 <div className="absolute inset-x-6 bottom-6 translate-y-4 group-hover:translate-y-0 transition-all duration-500 opacity-0 group-hover:opacity-100">
                   <div className="glass p-6 rounded-3xl border border-white/40 shadow-2xl flex justify-between items-end backdrop-blur-xl bg-white/10">
                     <div>
-                      <span className="text-primary text-[10px] font-black tracking-widest uppercase mb-1 block">
-                        {project.category}
+                      <span className="text-primary text-[10px] font-black tracking-widest mb-1 block">
+                        {project.category.toLowerCase()}
                       </span>
                       <h3 className="text-xl font-display font-bold text-slate-900 leading-tight">
                         {project.title}

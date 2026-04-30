@@ -33,10 +33,10 @@ export default function Footer() {
             <h4 className="text-lg font-display font-bold text-slate-900 leading-none">Quick Links</h4>
             <ul className="space-y-3">
               {[
-                { name: "Services", href: "/#services" },
-                { name: "Portfolio", href: "/portfolio" },
-                { name: "About", href: "/about" },
-                { name: "Contact Us", href: "/contact" }
+                { name: "services", href: "/#services" },
+                { name: "portfolio", href: "/portfolio" },
+                { name: "about", href: "/about" },
+                { name: "contact us", href: "/contact" }
               ].map((link, idx) => (
                 <li key={`footer-link-${idx}`}>
                   <Link to={link.href} className="text-slate-500 hover:text-primary text-sm transition-colors flex items-center gap-2 font-medium group">
@@ -71,11 +71,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3 text-slate-500 text-sm font-medium">
                 <Phone size={18} className="text-primary flex-shrink-0" />
-                <span>+254 700 000 000</span>
+                <span>+254 112 478 220</span>
               </li>
               <li className="flex items-center gap-3 text-slate-500 text-sm font-medium">
                 <Mail size={18} className="text-primary flex-shrink-0" />
-                <span>hello@midusa.digital</span>
+                <span>bochieng228@gmail.com</span>
               </li>
             </ul>
           </div>
