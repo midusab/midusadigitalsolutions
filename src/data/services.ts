@@ -5,7 +5,7 @@ export const services = [
     title: "business websites",
     description: "professional websites powered by ai-enhanced performance and analytics for corporate brands.",
     icon: Laptop,
-    color: "from-blue-600 to-emerald-500",
+    color: "from-blue-500 to-cyan-500",
   },
   {
     title: "portfolio showcases",
@@ -29,12 +29,12 @@ export const services = [
     title: "landing pages",
     description: "conversion-focused pages designed with ai a/b testing insights to maximize your roi.",
     icon: Rocket,
-    color: "from-emerald-500 to-teal-400",
+    color: "from-blue-400 to-indigo-500",
   },
   {
     title: "mobile-first design",
     description: "we ensure your site works flawlessly on every screen using cross-platform responsive engineering.",
     icon: Smartphone,
-    color: "from-teal-500 to-primary",
+    color: "from-cyan-500 to-primary",
   },
 ];

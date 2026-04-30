@@ -13,7 +13,7 @@ export default function About() {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-secondary font-black tracking-[0.2em] text-xs mb-4"
+              className="text-primary font-black tracking-[0.2em] text-xs mb-4"
             >
               our agency
             </motion.p>
@@ -25,11 +25,11 @@ export default function About() {
             </p>
             <div className="grid sm:grid-cols-2 gap-8 mb-10">
               <div>
-                <h3 className="text-4xl font-display font-black text-secondary mb-2">98%</h3>
+                <h3 className="text-4xl font-display font-black text-primary mb-2">98%</h3>
                 <p className="text-sm font-bold text-slate-500 tracking-widest">client satisfaction</p>
               </div>
               <div>
-                <h3 className="text-4xl font-display font-black text-secondary mb-2">150+</h3>
+                <h3 className="text-4xl font-display font-black text-primary mb-2">150+</h3>
                 <p className="text-sm font-bold text-slate-500 tracking-widest">projects delivered</p>
               </div>
             </div>
@@ -41,7 +41,7 @@ export default function About() {
             transition={{ duration: 1 }}
             className="relative"
           >
-            <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl shadow-secondary/10 border border-slate-100">
+            <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl shadow-primary/10 border border-slate-100">
               <img 
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80" 
                 className="w-full h-full object-cover"

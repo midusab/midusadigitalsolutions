@@ -20,7 +20,7 @@ export default function SEO() {
       title: "Conversion Tracking",
       desc: "Advanced analytics setup to track your ROI and see exactly where your customers come from.",
       icon: BarChart3,
-      color: "bg-emerald-500"
+      color: "bg-primary"
     }
   ];
 
@@ -99,7 +99,7 @@ export default function SEO() {
               className="absolute -top-10 -right-10 glass p-6 rounded-3xl shadow-2xl z-20 border border-white/40 w-56"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center text-white">
+                <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white">
                   <BarChart3 size={20} />
                 </div>
                 <p className="font-display font-bold text-slate-900">Traffic Spike</p>
@@ -111,9 +111,9 @@ export default function SEO() {
                     initial={{ height: 0 }}
                     whileInView={{ height: `${h}%` }}
                     transition={{ delay: 0.5 + (i * 0.1), duration: 1 }}
-                    className="flex-1 bg-emerald-500/20 rounded-t-sm relative group"
+                    className="flex-1 bg-primary/20 rounded-t-sm relative group"
                   >
-                    <div className="absolute inset-0 bg-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity rounded-t-sm" />
+                    <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-100 transition-opacity rounded-t-sm" />
                   </motion.div>
                 ))}
               </div>
@@ -127,13 +127,13 @@ export default function SEO() {
             >
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-red-400" />
-                  <div className="w-3 h-3 rounded-full bg-amber-400" />
-                  <div className="w-3 h-3 rounded-full bg-emerald-400" />
+                  <div className="w-3 h-3 rounded-full bg-slate-200" />
+                  <div className="w-3 h-3 rounded-full bg-slate-100" />
+                  <div className="w-3 h-3 rounded-full bg-primary/50" />
                 </div>
                 <div className="h-2 w-full bg-slate-100 rounded-full" />
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 size={14} className="text-emerald-500" />
+                  <CheckCircle2 size={14} className="text-primary" />
                   <div className="h-2 w-3/4 bg-primary/20 rounded-full" />
                 </div>
                 <div className="h-2 w-1/2 bg-slate-50 rounded-full" />

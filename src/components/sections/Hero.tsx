@@ -167,7 +167,7 @@ export default function Hero() {
               className="absolute -bottom-8 -left-12 glass p-5 rounded-3xl shadow-2xl z-30 border border-white/40 w-56"
             >
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-white">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white">
                   <CheckCircle2 size={24} />
                 </div>
                 <div>

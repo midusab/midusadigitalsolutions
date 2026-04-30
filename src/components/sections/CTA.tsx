@@ -10,7 +10,7 @@ export default function CTA() {
       className="glass-card mb-24 p-8 md:p-16 text-center relative overflow-hidden bg-slate-50 border border-slate-100 section-container"
     >
       <div className="absolute top-0 left-0 w-32 h-32 bg-primary/20 blur-3xl -ml-16 -mt-16"></div>
-      <div className="absolute bottom-0 right-0 w-48 h-48 bg-secondary/20 blur-3xl -mr-24 -mb-24"></div>
+      <div className="absolute bottom-0 right-0 w-48 h-48 bg-accent/20 blur-3xl -mr-24 -mb-24"></div>
       
       <h2 className="text-4xl md:text-5xl font-display font-medium mb-6 relative z-10 text-slate-900">
         Ready to Take Your <span className="text-gradient">Business Online?</span>

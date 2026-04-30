@@ -5,22 +5,22 @@ import SectionTitle from "../ui/SectionTitle";
 export default function DesignPhilosophy() {
   const pillars = [
     {
-      icon: <Layout className="text-secondary" size={24} />,
+      icon: <Layout className="text-primary" size={24} />,
       title: "clean ui/ux",
       description: "minimalist interfaces focused on clarity, removing friction and guiding users naturally through every interaction.",
-      color: "bg-secondary/10"
+      color: "bg-blue-500/10"
     },
     {
-      icon: <Cpu className="text-accent" size={24} />,
+      icon: <Cpu className="text-primary" size={24} />,
       title: "ai-powered",
       description: "we leverage cutting-edge ai models to accelerate development, optimize performance, and create smarter user experiences.",
-      color: "bg-accent/10"
+      color: "bg-indigo-500/10"
     },
     {
-      icon: <Sparkles className="text-emerald-500" size={24} />,
+      icon: <Sparkles className="text-secondary" size={24} />,
       title: "modern aesthetics",
       description: "bold typography and intentional whitespace blended with modern design trends that elevate your brand's presence.",
-      color: "bg-emerald-500/10"
+      color: "bg-cyan-500/10"
     }
   ];
 
@@ -103,7 +103,7 @@ export default function DesignPhilosophy() {
             <motion.div 
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity }}
-              className="absolute -top-6 -right-6 p-4 bg-secondary text-white rounded-2xl shadow-xl shadow-secondary/30 z-10"
+              className="absolute -top-6 -right-6 p-4 bg-primary text-white rounded-2xl shadow-xl shadow-primary/30 z-10"
             >
               <Cpu size={32} />
             </motion.div>

@@ -129,7 +129,7 @@ export default function ProjectDetail() {
                   transition={{ delay: idx * 0.1 }}
                   className="flex items-start gap-4 p-5 bg-white border border-slate-100 rounded-2xl shadow-sm"
                 >
-                  <div className="w-6 h-6 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-600 shrink-0 mt-0.5">
+                  <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 mt-0.5">
                     <CheckCircle2 size={14} />
                   </div>
                   <span className="font-bold text-slate-700 text-sm leading-relaxed">{feature}</span>
