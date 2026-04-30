@@ -24,7 +24,7 @@ export const projects: Project[] = [
     features: [
       "Online Reservations with Real-time Availability",
       "Dynamic Menu with Dietary Filtering",
-      "Instagram Feed Integration",
+      "TikTok Feed Integration",
       "Automated Table Management System",
       "Interactive Google Maps Integration",
       "Multi-language Support"

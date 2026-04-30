@@ -1,6 +1,6 @@
 export const plans = [
   {
-    name: "Starter",
+    name: "starter",
     price: "15,000+",
     description: "Perfect for personal brands and landing pages.",
     features: [
@@ -11,11 +11,11 @@ export const plans = [
       "48-Hour Support Response",
       "Basic Analytics",
     ],
-    cta: "Choose Starter",
+    cta: "choose starter",
     highlight: false,
   },
   {
-    name: "Business",
+    name: "business",
     price: "35,000+",
     description: "The ideal solution for growing small businesses.",
     features: [
@@ -27,11 +27,11 @@ export const plans = [
       "Priority Support",
       "Speed Optimization (Score 90+)",
     ],
-    cta: "Start Your Growth",
+    cta: "start your growth",
     highlight: true,
   },
   {
-    name: "Premium",
+    name: "premium",
     price: "80,000+",
     description: "Full-scale digital presence for established brands.",
     features: [
@@ -43,7 +43,7 @@ export const plans = [
       "Advanced Analytics Dashboard",
       "1 Year Free Maintenance",
     ],
-    cta: "Scale Your Brand",
+    cta: "scale your brand",
     highlight: false,
   },
 ];

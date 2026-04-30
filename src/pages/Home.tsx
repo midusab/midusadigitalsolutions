@@ -6,6 +6,7 @@ import Process from "../components/sections/Process";
 import Testimonials from "../components/sections/Testimonials";
 import CTA from "../components/sections/CTA";
 import SEO from "../components/sections/SEO";
+import DesignPhilosophy from "../components/sections/DesignPhilosophy";
 
 export default function Home() {
   return (
@@ -19,6 +20,10 @@ export default function Home() {
       <div key="sep-seo-1" className="w-full h-px bg-slate-100" />
 
       <SEO key="seo-section" />
+
+      <div key="sep-philosophy" className="w-full h-px bg-slate-100" />
+
+      <DesignPhilosophy key="philosophy-section" />
       
       <div key="sep-2" className="w-full h-px bg-slate-100" />
       

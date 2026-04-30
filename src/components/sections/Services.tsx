@@ -10,9 +10,9 @@ export default function Services() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-primary font-black tracking-[0.2em] text-xs uppercase mb-4"
+            className="text-primary font-black tracking-[0.2em] text-xs mb-4"
           >
-            Capabilities
+            capabilities
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -78,7 +78,7 @@ export default function Services() {
                 </p>
 
                 <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
-                  <span className="text-xs font-black tracking-widest text-slate-300 uppercase group-hover:text-primary transition-colors">Digital Excellence</span>
+                  <span className="text-xs font-black tracking-widest text-slate-300 group-hover:text-primary transition-colors">digital excellence</span>
                   <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-primary transition-colors">
                     <Rocket size={14} className="group-hover:text-white transition-transform group-hover:scale-125" />
                   </div>

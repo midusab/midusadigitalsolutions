@@ -13,9 +13,9 @@ export default function About() {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-primary font-black tracking-[0.2em] text-xs uppercase mb-4"
+              className="text-secondary font-black tracking-[0.2em] text-xs mb-4"
             >
-              Our Agency
+              our agency
             </motion.p>
             <h1 className="text-5xl md:text-6xl font-display font-bold mb-8 text-slate-900 leading-tight">
               Crafting <span className="text-gradient">Digital Success</span> in Africa
@@ -25,12 +25,12 @@ export default function About() {
             </p>
             <div className="grid sm:grid-cols-2 gap-8 mb-10">
               <div>
-                <h3 className="text-4xl font-display font-black text-primary mb-2">98%</h3>
-                <p className="text-sm font-bold text-slate-500 uppercase tracking-widest">Client Satisfaction</p>
+                <h3 className="text-4xl font-display font-black text-secondary mb-2">98%</h3>
+                <p className="text-sm font-bold text-slate-500 tracking-widest">client satisfaction</p>
               </div>
               <div>
-                <h3 className="text-4xl font-display font-black text-primary mb-2">150+</h3>
-                <p className="text-sm font-bold text-slate-500 uppercase tracking-widest">Projects Delivered</p>
+                <h3 className="text-4xl font-display font-black text-secondary mb-2">150+</h3>
+                <p className="text-sm font-bold text-slate-500 tracking-widest">projects delivered</p>
               </div>
             </div>
           </motion.div>
@@ -41,7 +41,7 @@ export default function About() {
             transition={{ duration: 1 }}
             className="relative"
           >
-            <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl shadow-primary/10 border border-slate-100">
+            <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl shadow-secondary/10 border border-slate-100">
               <img 
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80" 
                 className="w-full h-full object-cover"
@@ -63,8 +63,8 @@ export default function About() {
               img: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80"
             },
             {
-              title: "Modern Stack",
-              desc: "We use high-performance frameworks for lightning-fast loading speeds.",
+              title: "Modern AI Stack",
+              desc: "We use high-performance frameworks and AI-assisted development for lightning-fast delivery.",
               img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80"
             },
             {

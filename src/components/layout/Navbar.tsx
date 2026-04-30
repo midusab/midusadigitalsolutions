@@ -58,11 +58,11 @@ export default function Navbar() {
           className="flex items-center gap-2 cursor-pointer"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
-          <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center font-display font-bold text-xl text-white shadow-[0_5px_15px_rgba(0,102,255,0.2)]">
+          <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center font-display font-bold text-xl text-white shadow-[0_5px_15px_rgba(16,185,129,0.2)]">
             M
           </div>
           <span className="font-display font-bold text-xl tracking-tight text-slate-900">
-            Midusa<span className="text-primary">Digital</span>
+            Midusa<span className="text-secondary">Digital</span>
           </span>
         </Link>
 
@@ -91,7 +91,7 @@ export default function Navbar() {
           >
             <Link
               to="/contact"
-              className="px-6 py-2.5 bg-primary text-white rounded-full text-sm font-bold transition-all shadow-lg shadow-primary/20 hover:bg-blue-600"
+              className="px-6 py-2.5 bg-secondary text-white rounded-full text-sm font-bold transition-all shadow-lg shadow-secondary/20 hover:bg-emerald-600"
             >
               Get a Quote
             </Link>
@@ -132,7 +132,7 @@ export default function Navbar() {
               ))}
             <Link
               to="/contact"
-              className="w-full py-4 bg-primary text-white rounded-2xl font-display font-semibold flex items-center justify-center gap-2 shadow-lg shadow-primary/20"
+              className="w-full py-4 bg-secondary text-white rounded-2xl font-display font-semibold flex items-center justify-center gap-2 shadow-lg shadow-secondary/20"
               onClick={() => setMobileMenuOpen(false)}
             >
               Start Your Project <ArrowRight size={20} />

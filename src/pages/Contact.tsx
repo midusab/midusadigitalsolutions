@@ -41,7 +41,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-xs font-black text-slate-400 uppercase tracking-widest">Location</p>
-                <p className="font-display font-bold text-slate-900">Nairobi, Kenya</p>
+                <p className="font-display font-bold text-slate-900">Kakamega, Kenya</p>
               </div>
             </div>
           </div>

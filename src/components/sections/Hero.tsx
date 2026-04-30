@@ -53,7 +53,7 @@ export default function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
-            KICKSTART YOUR DIGITAL JOURNEY
+            kickstart your digital journey
           </motion.div>
           
           <motion.h1 
@@ -84,7 +84,7 @@ export default function Hero() {
           </div>
 
           <div className="flex flex-wrap gap-x-8 gap-y-4">
-            {["High Conversion", "SEO Optimized", "Ultra Fast Loading"].map((item, idx) => (
+            {["high conversion", "seo optimized", "ultra fast loading"].map((item, idx) => (
               <div key={`hero-feature-${idx}`} className="flex items-center gap-2 text-sm font-semibold text-slate-500">
                 <CheckCircle2 size={16} className="text-primary" />
                 {item}
@@ -119,7 +119,7 @@ export default function Hero() {
               {/* Overlay Content */}
               <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end">
                 <div className="glass p-4 rounded-2xl border border-white/20 shadow-2xl">
-                  <p className="text-[10px] font-black tracking-widest text-white/70 uppercase mb-1">Conversion Tracking</p>
+                  <p className="text-[10px] font-black tracking-widest text-white/70 mb-1">conversion tracking</p>
                   <h3 className="text-xl font-display font-bold text-white">+84% Revenue Growth</h3>
                 </div>
                 <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white shadow-lg">
@@ -142,7 +142,7 @@ export default function Hero() {
                   <Calendar size={20} className="text-primary" />
                 </div>
                 <div>
-                  <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">New Booking</p>
+                  <p className="text-[10px] font-black text-slate-400 tracking-widest">new booking</p>
                   <p className="font-display font-bold text-slate-900 text-sm">Table for 4 at 7:00 PM</p>
                 </div>
               </div>

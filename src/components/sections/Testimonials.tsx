@@ -10,9 +10,9 @@ export default function Testimonials() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-primary font-black tracking-[0.2em] text-xs uppercase mb-4"
+            className="text-primary font-black tracking-[0.2em] text-xs mb-4"
           >
-            Success Stories
+            success stories
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -54,7 +54,7 @@ export default function Testimonials() {
                 />
                 <div>
                   <h4 className="font-display font-bold text-slate-900">{testimonial.name}</h4>
-                  <p className="text-slate-400 text-[10px] font-black tracking-widest uppercase">{testimonial.role}</p>
+                  <p className="text-slate-400 text-[10px] font-black tracking-widest">{testimonial.role.toLowerCase()}</p>
                 </div>
               </div>
             </motion.div>

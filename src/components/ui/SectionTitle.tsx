@@ -13,7 +13,7 @@ export default function SectionTitle({ tag, title, subtitle, centered = false }:
       <motion.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        className="text-primary font-black tracking-[0.2em] text-xs uppercase mb-4"
+        className="text-primary font-black tracking-[0.2em] text-xs mb-4"
       >
         {tag}
       </motion.p>
