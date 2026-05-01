@@ -15,6 +15,8 @@ import ProjectDetail from "./pages/ProjectDetail.tsx";
 import PortfolioPage from "./pages/PortfolioPage.tsx";
 import { useEffect } from "react";
 
+import { TooltipProvider } from "@/components/ui/tooltip";
+
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -26,21 +28,23 @@ function ScrollToTop() {
 export default function App() {
   return (
     <Router>
-      <div className="relative min-h-screen bg-white selection:bg-primary/20 scroll-smooth">
-        <ScrollToTop />
-        <Navbar />
-        <AnimatePresence mode="wait">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/portfolio" element={<PortfolioPage />} />
-            <Route path="/portfolio/:id" element={<ProjectDetail />} />
-          </Routes>
-        </AnimatePresence>
-        <Footer />
-        <WhatsAppButton />
-      </div>
+      <TooltipProvider>
+        <div className="relative min-h-screen bg-white selection:bg-primary/20 scroll-smooth">
+          <ScrollToTop />
+          <Navbar />
+          <AnimatePresence mode="wait">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/portfolio" element={<PortfolioPage />} />
+              <Route path="/portfolio/:id" element={<ProjectDetail />} />
+            </Routes>
+          </AnimatePresence>
+          <Footer />
+          <WhatsAppButton />
+        </div>
+      </TooltipProvider>
     </Router>
   );
 }

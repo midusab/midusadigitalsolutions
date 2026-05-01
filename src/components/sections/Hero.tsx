@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowRight, Play, CheckCircle2, Calendar } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   return (
@@ -75,12 +76,22 @@ export default function Hero() {
           </motion.p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-10">
-            <button key="btn-start" className="btn-primary" onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}>
+            <Button 
+              key="btn-start" 
+              variant="premium" 
+              size="xl"
+              onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
+            >
               Start Your Project <ArrowRight size={20} />
-            </button>
-            <button key="btn-portfolio" className="btn-secondary" onClick={() => document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })}>
+            </Button>
+            <Button 
+              key="btn-portfolio" 
+              variant="premium-outline" 
+              size="xl"
+              onClick={() => document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })}
+            >
               View Portfolio <Play size={18} fill="currentColor" />
-            </button>
+            </Button>
           </div>
 
           <div className="flex flex-wrap gap-x-8 gap-y-4">
