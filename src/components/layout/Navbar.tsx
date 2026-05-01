@@ -1,13 +1,21 @@
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence, useScroll, useSpring } from "motion/react";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { useState, useEffect, MouseEvent } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import Magnetic from "../common/Magnetic";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,10 +26,10 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "services", href: "/#services", isHash: true },
-    { name: "portfolio", href: "/portfolio", isHash: false },
-    { name: "about", href: "/about", isHash: false },
-    { name: "contact", href: "/contact", isHash: false },
+    { name: "Services", href: "/#services", isHash: true },
+    { name: "Portfolio", href: "/portfolio", isHash: false },
+    { name: "About", href: "/about", isHash: false },
+    { name: "Contact", href: "/contact", isHash: false },
   ];
 
   const handleLinkClick = (e: MouseEvent<HTMLAnchorElement>, link: typeof navLinks[0]) => {
@@ -52,35 +60,54 @@ export default function Navbar() {
         isScrolled ? "py-4 bg-white/80 backdrop-blur-md shadow-sm border-b border-slate-100" : "py-6 bg-transparent"
       }`}
     >
+      {/* Scroll Progress Bar */}
+      <motion.div className="scroll-progress" style={{ scaleX }} />
+
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <Link
-          to="/"
-          className="flex items-center gap-2 cursor-pointer"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        >
-          <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center font-display font-bold text-xl text-white shadow-[0_5px_15px_rgba(0,102,255,0.2)]">
-            M
-          </div>
-          <span className="font-display font-bold text-xl tracking-tight text-slate-900">
-            Midusa<span className="text-primary">Digital</span>
-          </span>
-        </Link>
+        <Magnetic strength={0.15}>
+          <Link
+            to="/"
+            aria-label="Midusa Digital Home"
+            className="flex items-center gap-2 cursor-pointer group"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center font-display font-bold text-xl text-white shadow-[0_5px_15px_rgba(0,102,255,0.2)] group-hover:shadow-primary/40 transition-shadow duration-300">
+              M
+            </div>
+            <span className="font-display font-bold text-xl tracking-tight text-slate-900">
+              Midusa<span className="text-primary group-hover:text-secondary transition-colors duration-300">Digital</span>
+            </span>
+          </Link>
+        </Magnetic>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-8" role="list">
           {navLinks.map((link, idx) => (
             <motion.div
               key={`desktop-nav-${link.name}-${idx}`}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
+              role="listitem"
             >
               <Link
                 to={link.href}
                 onClick={(e) => handleLinkClick(e, link)}
-                className="text-sm font-bold text-slate-600 hover:text-primary transition-colors"
+                aria-current={(link.isHash && location.hash === link.href.split("#")[1]) || location.pathname === link.href ? "page" : undefined}
+                className={`text-sm font-bold transition-colors relative group ${
+                  (link.isHash && location.hash === link.href.split("#")[1]) || location.pathname === link.href
+                    ? "text-primary"
+                    : "text-slate-600 hover:text-primary"
+                }`}
               >
                 {link.name}
+                {((link.isHash && location.hash === link.href.split("#")[1]) || location.pathname === link.href) && (
+                  <motion.div
+                    layoutId="activeNav"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
               </Link>
             </motion.div>
           ))}
@@ -91,7 +118,7 @@ export default function Navbar() {
           >
             <Link
               to="/contact"
-              className="px-6 py-2.5 bg-primary text-white rounded-full text-sm font-bold transition-all shadow-lg shadow-primary/20 hover:bg-blue-600"
+              className="px-6 py-2.5 bg-primary text-white rounded-full text-sm font-bold transition-all shadow-lg shadow-primary/20 hover:bg-blue-600 active:scale-95"
             >
               Get a Quote
             </Link>
@@ -102,9 +129,13 @@ export default function Navbar() {
         <div className="md:hidden">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`p-2 transition-colors ${isScrolled || mobileMenuOpen ? "text-slate-900" : "text-primary"}`}
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
+            className={`p-2 rounded-full transition-all duration-300 ${
+              mobileMenuOpen ? "bg-slate-100 text-slate-900" : "bg-primary/5 text-primary hover:bg-primary/10"
+            }`}
           >
-            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>

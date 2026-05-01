@@ -5,7 +5,7 @@ import { projects } from "../../data/projects";
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="py-24 bg-white">
+    <section id="portfolio" className="py-24 bg-transparent">
       <div className="section-container">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl text-center md:text-left">
@@ -57,8 +57,8 @@ export default function Portfolio() {
                 </div>
                 
                 {/* Floating Information Card */}
-                <div className="absolute inset-x-6 bottom-6 translate-y-4 group-hover:translate-y-0 transition-all duration-500 opacity-0 group-hover:opacity-100">
-                  <div className="glass p-6 rounded-3xl border border-white/40 shadow-2xl flex justify-between items-end backdrop-blur-xl bg-white/10">
+                <div className="absolute inset-x-6 bottom-6 translate-y-2 group-hover:translate-y-0 transition-all duration-500 opacity-0 group-hover:opacity-100">
+                  <div className="glass p-6 rounded-[2rem] border border-white/20 shadow-2xl flex justify-between items-end backdrop-blur-[32px] bg-white/20">
                     <div>
                       <span className="text-primary text-[10px] font-black tracking-widest uppercase mb-1 block">
                         {project.category}

@@ -1,14 +1,15 @@
 import { motion } from "motion/react";
-import { ArrowRight, Play, CheckCircle2, Calendar } from "lucide-react";
+import { ArrowRight, Play, CheckCircle2, Calendar, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Magnetic from "../common/Magnetic";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-white">
+    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-transparent">
       {/* Dynamic Background Image with Overlay */}
       <motion.div 
         initial={{ scale: 1.1, opacity: 0 }}
-        animate={{ scale: 1, opacity: 0.15 }}
+        animate={{ scale: 1, opacity: 0.1 }}
         transition={{ duration: 2 }}
         className="absolute inset-0 z-0"
       >
@@ -17,7 +18,7 @@ export default function Hero() {
           alt="Modern Office Background" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-white/80 to-primary/5"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/40 to-primary/5"></div>
       </motion.div>
 
       {/* Floating Decorative Elements */}
@@ -54,7 +55,7 @@ export default function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
-            kickstart your digital journey
+            Kickstart Your Digital Journey
           </motion.div>
           
           <motion.h1 
@@ -75,27 +76,33 @@ export default function Hero() {
             Modern, high-performance websites designed for ambitious businesses. We combine premium aesthetics with conversion science to grow your brand.
           </motion.p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mb-10">
-            <Button 
-              key="btn-start" 
-              variant="premium" 
-              size="xl"
-              onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
-            >
-              Start Your Project <ArrowRight size={20} />
-            </Button>
-            <Button 
-              key="btn-portfolio" 
-              variant="premium-outline" 
-              size="xl"
-              onClick={() => document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })}
-            >
-              View Portfolio <Play size={18} fill="currentColor" />
-            </Button>
+          <div className="flex flex-col sm:flex-row gap-6 mb-10">
+            <Magnetic strength={0.2}>
+              <Button 
+                key="btn-start" 
+                variant="premium" 
+                size="xl"
+                onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
+                className="w-full sm:w-auto"
+              >
+                Start Your Project <ArrowRight size={20} />
+              </Button>
+            </Magnetic>
+            <Magnetic strength={0.2}>
+              <Button 
+                key="btn-portfolio" 
+                variant="premium-outline" 
+                size="xl"
+                onClick={() => document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })}
+                className="w-full sm:w-auto"
+              >
+                View Portfolio <Play size={18} fill="currentColor" />
+              </Button>
+            </Magnetic>
           </div>
 
           <div className="flex flex-wrap gap-x-8 gap-y-4">
-            {["high conversion", "seo optimized", "ultra fast loading"].map((item, idx) => (
+            {["High Conversion", "SEO Optimized", "Ultra Fast Loading"].map((item, idx) => (
               <div key={`hero-feature-${idx}`} className="flex items-center gap-2 text-sm font-semibold text-slate-500">
                 <CheckCircle2 size={16} className="text-primary" />
                 {item}
@@ -130,7 +137,7 @@ export default function Hero() {
               {/* Overlay Content */}
               <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end">
                 <div className="glass p-4 rounded-2xl border border-white/20 shadow-2xl">
-                  <p className="text-[10px] font-black tracking-widest text-white/70 mb-1">conversion tracking</p>
+                  <p className="text-[10px] font-black tracking-widest text-white/70 mb-1">Conversion Tracking</p>
                   <h3 className="text-xl font-display font-bold text-white">+84% Revenue Growth</h3>
                 </div>
                 <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white shadow-lg">
@@ -153,7 +160,7 @@ export default function Hero() {
                   <Calendar size={20} className="text-primary" />
                 </div>
                 <div>
-                  <p className="text-[10px] font-black text-slate-400 tracking-widest">new booking</p>
+                  <p className="text-[10px] font-black text-slate-400 tracking-widest">New Booking</p>
                   <p className="font-display font-bold text-slate-900 text-sm">Table for 4 at 7:00 PM</p>
                 </div>
               </div>

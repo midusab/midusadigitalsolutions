@@ -4,7 +4,7 @@ import { services } from "../../data/services";
 
 export default function Services() {
   return (
-    <section id="services" className="bg-slate-50/50 relative py-24">
+    <section id="services" className="bg-transparent relative py-24">
       <div className="section-container">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <motion.p
@@ -12,7 +12,7 @@ export default function Services() {
             whileInView={{ opacity: 1 }}
             className="text-primary font-black tracking-[0.2em] text-xs mb-4"
           >
-            capabilities
+            Capabilities
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -43,7 +43,7 @@ export default function Services() {
                 y: -15,
                 transition: { duration: 0.3 }
               }}
-              className="glass-card group relative overflow-hidden bg-white border border-slate-200/60 flex flex-col"
+              className="glass-card group relative overflow-hidden border border-white/20 flex flex-col"
             >
               {/* Image Preview for Service */}
               <div className="h-48 overflow-hidden relative">
@@ -63,8 +63,8 @@ export default function Services() {
               </div>
 
               <div className="p-8 relative mt-[-2rem]">
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} p-[1px] mb-6 group-hover:scale-110 transition-transform duration-500 shadow-xl`}>
-                  <div className="w-full h-full bg-white rounded-[15px] flex items-center justify-center">
+                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} p-[1px] mb-6 group-hover:scale-110 transition-transform duration-500 shadow-xl shadow-primary/5`}>
+                  <div className="w-full h-full glass rounded-[15px] flex items-center justify-center border-none">
                     <service.icon size={28} className="text-slate-800" />
                   </div>
                 </div>
@@ -78,7 +78,7 @@ export default function Services() {
                 </p>
 
                 <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
-                  <span className="text-xs font-black tracking-widest text-slate-300 group-hover:text-primary transition-colors">digital excellence</span>
+                  <span className="text-xs font-black tracking-widest text-slate-300 group-hover:text-primary transition-colors">Digital Excellence</span>
                   <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-primary transition-colors">
                     <Rocket size={14} className="group-hover:text-white transition-transform group-hover:scale-125" />
                   </div>

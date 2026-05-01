@@ -14,6 +14,7 @@ import Contact from "./pages/Contact.tsx";
 import ProjectDetail from "./pages/ProjectDetail.tsx";
 import PortfolioPage from "./pages/PortfolioPage.tsx";
 import { useEffect } from "react";
+import MeshBackground from "./components/layout/MeshBackground.tsx";
 
 import { TooltipProvider } from "@/components/ui/tooltip";
 
@@ -29,7 +30,8 @@ export default function App() {
   return (
     <Router>
       <TooltipProvider>
-        <div className="relative min-h-screen bg-white selection:bg-primary/20 scroll-smooth">
+        <div className="relative min-h-screen bg-white/5 selection:bg-primary/20 scroll-smooth">
+          <MeshBackground />
           <ScrollToTop />
           <Navbar />
           <AnimatePresence mode="wait">
