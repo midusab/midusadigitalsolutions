@@ -26,7 +26,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="py-24 relative overflow-hidden bg-white">
+    <section id="process" className="py-24 relative overflow-hidden bg-transparent">
       {/* Background line */}
       <div className="absolute top-[41%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/10 to-transparent hidden lg:block" />
 
@@ -37,7 +37,7 @@ export default function Process() {
             whileInView={{ opacity: 1 }}
             className="text-primary font-black tracking-[0.2em] text-xs uppercase mb-4"
           >
-            How it works
+            How It Works
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}

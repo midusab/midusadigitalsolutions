@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-24 bg-slate-50/50">
+    <section id="pricing" className="py-24 bg-transparent">
       <div className="section-container">
         <div className="text-center max-w-2xl mx-auto mb-20">
           <motion.p
@@ -14,7 +14,7 @@ export default function Pricing() {
             whileInView={{ opacity: 1 }}
             className="text-primary font-black tracking-[0.2em] text-xs mb-4"
           >
-            pricing plans
+            Pricing Plans
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -52,7 +52,7 @@ export default function Pricing() {
                 {plan.highlight && (
                   <>
                     <div key="most-popular-badge" className="absolute top-0 right-0 px-6 py-2 bg-primary text-white text-[10px] font-black tracking-[0.2em] rounded-bl-3xl z-20">
-                      most popular
+                      Most Popular
                     </div>
                     <motion.div 
                       animate={{ 
