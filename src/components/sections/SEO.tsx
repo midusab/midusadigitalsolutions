@@ -25,7 +25,7 @@ export default function SEO() {
   ];
 
   return (
-    <section id="seo" className="py-24 bg-slate-50/50 overflow-hidden">
+    <section id="seo" className="py-24 bg-transparent overflow-hidden">
       <div className="section-container">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div

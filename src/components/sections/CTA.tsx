@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 
 export default function CTA() {
   return (
-    <Card className="mb-24 relative overflow-hidden bg-slate-50 border border-slate-100 section-container shadow-none py-16 md:py-24 px-8 md:px-16 text-center rounded-[3rem]">
+    <Card className="mb-24 relative overflow-hidden glass-card border-none section-container shadow-none py-16 md:py-24 px-8 md:px-16 text-center rounded-[3rem]">
       <div className="absolute top-0 left-0 w-32 h-32 bg-primary/20 blur-3xl -ml-16 -mt-16"></div>
       <div className="absolute bottom-0 right-0 w-48 h-48 bg-accent/20 blur-3xl -mr-24 -mb-24"></div>
       

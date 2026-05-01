@@ -4,7 +4,7 @@ import { testimonials } from "../../data/testimonials";
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-24 bg-slate-50/50">
+    <section id="testimonials" className="py-24 bg-transparent">
       <div className="section-container">
         <div className="text-center max-w-2xl mx-auto mb-20">
           <motion.p
@@ -12,7 +12,7 @@ export default function Testimonials() {
             whileInView={{ opacity: 1 }}
             className="text-primary font-black tracking-[0.2em] text-xs mb-4"
           >
-            success stories
+            Success Stories
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -54,7 +54,7 @@ export default function Testimonials() {
                 />
                 <div>
                   <h4 className="font-display font-bold text-slate-900">{testimonial.name}</h4>
-                  <p className="text-slate-400 text-[10px] font-black tracking-widest">{testimonial.role.toLowerCase()}</p>
+                  <p className="text-slate-400 text-[10px] font-black tracking-widest">{testimonial.role}</p>
                 </div>
               </div>
             </motion.div>

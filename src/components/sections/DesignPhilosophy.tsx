@@ -6,32 +6,32 @@ export default function DesignPhilosophy() {
   const pillars = [
     {
       icon: <Layout className="text-primary" size={24} />,
-      title: "clean ui/ux",
-      description: "minimalist interfaces focused on clarity, removing friction and guiding users naturally through every interaction.",
+      title: "Clean UI/UX",
+      description: "Minimalist interfaces focused on clarity, removing friction and guiding users naturally through every interaction.",
       color: "bg-blue-500/10"
     },
     {
       icon: <Cpu className="text-primary" size={24} />,
-      title: "ai-powered",
-      description: "we leverage cutting-edge ai models to accelerate development, optimize performance, and create smarter user experiences.",
+      title: "AI-Powered",
+      description: "We leverage cutting-edge AI models to accelerate development, optimize performance, and create smarter user experiences.",
       color: "bg-indigo-500/10"
     },
     {
       icon: <Sparkles className="text-secondary" size={24} />,
-      title: "modern aesthetics",
-      description: "bold typography and intentional whitespace blended with modern design trends that elevate your brand's presence.",
+      title: "Modern Aesthetics",
+      description: "Bold typography and intentional whitespace blended with modern design trends that elevate your brand's presence.",
       color: "bg-cyan-500/10"
     }
   ];
 
   const highlights = [
-    { label: "intelligent workflows", icon: <Zap size={16} /> },
-    { label: "predictive analytics", icon: <Eye size={16} /> },
-    { label: "automated scaling", icon: <Code2 size={16} /> }
+    { label: "Intelligent Workflows", icon: <Zap size={16} /> },
+    { label: "Predictive Analytics", icon: <Eye size={16} /> },
+    { label: "Automated Scaling", icon: <Code2 size={16} /> }
   ];
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-24 bg-transparent relative overflow-hidden">
       <div className="section-container">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -40,9 +40,9 @@ export default function DesignPhilosophy() {
             viewport={{ once: true }}
           >
             <SectionTitle 
-              tag="our philosophy"
-              title="where clean design meets intelligent code"
-              subtitle="we don't just build websites; we craft digital ecosystems that are beautiful at the surface and intelligent at the core. our process combines human creativity with artificial intelligence to deliver results faster and more accurately."
+              tag="Our Philosophy"
+              title="Where Clean Design Meets Intelligent Code"
+              subtitle="We don't just build websites; we craft digital ecosystems that are beautiful at the surface and intelligent at the core. Our process combines human creativity with artificial intelligence to deliver results faster and more accurately."
             />
             
             <div className="grid gap-6 mt-12">
@@ -86,7 +86,7 @@ export default function DesignPhilosophy() {
               
               <div className="absolute bottom-8 left-8 right-8">
                 <div className="glass p-6 rounded-2xl border border-white/20 backdrop-blur-md bg-white/10">
-                  <p className="text-white font-display font-bold mb-4">ai-driven enhancements</p>
+                  <p className="text-white font-display font-bold mb-4">AI-Driven Enhancements</p>
                   <div className="flex flex-wrap gap-3">
                     {highlights.map((h, i) => (
                       <div key={i} className="flex items-center gap-2 px-3 py-1.5 bg-white/10 rounded-lg text-white text-[10px] font-bold tracking-widest border border-white/5 uppercase">
